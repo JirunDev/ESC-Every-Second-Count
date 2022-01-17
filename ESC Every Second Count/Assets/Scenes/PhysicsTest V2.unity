@@ -1223,6 +1223,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -2082,15 +2083,15 @@ MonoBehaviour:
   groundSpeed: 6
   runSpeed: 10
   grAccel: 15
-  airSpeed: 5
-  airAccel: 20
-  jumpUpSpeed: 9.2
+  airSpeed: 3
+  airAccel: 10
+  jumpUpSpeed: 6.5
   dashSpeed: 6
-  wallSpeed: 10
+  wallSpeed: 6
   wallClimbSpeed: 4
   wallAccel: 20
   wallRunTime: 3
-  wallStickiness: 20
+  wallStickiness: 15
   wallStickDistance: 1
   wallFloorBarrier: 40
   wallBanTime: 4

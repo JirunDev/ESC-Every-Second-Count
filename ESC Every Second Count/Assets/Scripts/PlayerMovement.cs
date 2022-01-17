@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 bannedGroundNormal;
 
     //Cooldowns
+    [Header("Cooldown")]
     bool canJump = true;
     bool canDJump = true;
     [SerializeField] private float wallBan = 0f;
@@ -68,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         camCon = GetComponentInChildren<CameraController2>();
         col = GetComponent<CapsuleCollider>();
+        rb.drag = 0;
     }
 
     void OnGUI()
@@ -275,7 +277,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //if (crouched) acceleration = 0.5f;
+            if (crouched) acceleration = 0.5f;
             wishDir = wishDir.normalized;
             Vector3 spid = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
             if (spid.magnitude > maxSpeed) acceleration *= spid.magnitude / maxSpeed;
