@@ -35,7 +35,7 @@ public class CameraController2 : MonoBehaviour
 
     void FixedUpdate()
     {
-        float addedFov = rb.velocity.magnitude - 3.44f;
+        float addedFov = rb.velocity.magnitude*2 - 3.44f;
         fov = Mathf.Lerp(fov, baseFov + addedFov, 0.5f);
         fov = Mathf.Clamp(fov, baseFov, maxFov);
         mainCamera.fieldOfView = fov;
