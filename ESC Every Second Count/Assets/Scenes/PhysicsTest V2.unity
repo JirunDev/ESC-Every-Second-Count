@@ -2061,6 +2061,7 @@ GameObject:
   - component: {fileID: 2139646838}
   - component: {fileID: 2139646842}
   - component: {fileID: 2139646837}
+  - component: {fileID: 2139646843}
   m_Layer: 0
   m_Name: PlayerV2
   m_TagString: Player
@@ -2120,7 +2121,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139646836}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 3
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -2192,6 +2193,25 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2139646843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139646836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabefda5907c7584eab1292ee834ec5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enable: 1
+  _amplitude: 0.01
+  _walkFrequency: 20
+  _runFrequency: 30
+  _camera: {fileID: 1239024007}
+  _cameraHolder: {fileID: 1546563901}
+  playerHeight: 2
 --- !u!1 &2143332272
 GameObject:
   m_ObjectHideFlags: 0
