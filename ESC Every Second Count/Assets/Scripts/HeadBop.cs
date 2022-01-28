@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class HeadBop : MonoBehaviour
 {
-    [SerializeField] private bool _enable = true;
+    private bool _enable = true;
 
+    [Header("Customization")]
     [SerializeField, Range(0, 0.1f)] private float _amplitude = 0.01f;
     [SerializeField, Range(0, 30)] private float _walkFrequency = 20.0f;
     [SerializeField, Range(0, 30)] private float _runFrequency = 30.0f;
 
+    [Header("References")]
     [SerializeField] private Transform _camera = null;
     [SerializeField] private Transform _cameraHolder = null;
 
     private float _toggleSpeed = 3.0f;
     private Vector3 _startPos;
 
+    [Header("Player")]
     Rigidbody _rb;
     [SerializeField] private float playerHeight = 2.0f;
 
