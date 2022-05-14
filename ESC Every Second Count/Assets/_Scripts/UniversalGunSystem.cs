@@ -29,11 +29,17 @@ public class UniversalGunSystem : MonoBehaviour
     public GameObject muzzleFlash, bulletHoleGraphics;
     public TextMeshProUGUI text;
     public float bulletHolesLoadAmount = 3f;
+    public AudioClip ShootAudio;
+    public AudioClip ReloadAudio;
+    public AudioClip OutOfAmmoAudio;
+    public AudioSource audioSource;
 
     private void Awake()
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -56,6 +62,11 @@ public class UniversalGunSystem : MonoBehaviour
         {
             bulletShot = bulletsPerTap;
             Shoot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !reloading && bulletsLeft == 0)
+        {
+            audioSource.PlayOneShot(OutOfAmmoAudio);
         }
     }
 
@@ -100,6 +111,8 @@ public class UniversalGunSystem : MonoBehaviour
 
         if(bulletShot > 0 && bulletsLeft > 0)
         Invoke("Shoot", timeBetweenShots);
+
+        audioSource.PlayOneShot(ShootAudio);
     }
 
     private void ResetShot()
@@ -109,6 +122,7 @@ public class UniversalGunSystem : MonoBehaviour
 
     private void Reload()
     {
+        audioSource.PlayOneShot(ReloadAudio);
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
     }
