@@ -12,6 +12,8 @@ public class CameraController2 : MonoBehaviour
     [SerializeField] private float baseFov = 90f;
     [SerializeField] private float maxFov = 140f;
     [SerializeField] private float wallRunTilt = 15f;
+    [Space]
+    [SerializeField] private float zoomFOV = 35f;
 
     float wishTilt = 0;
     float curTilt = 0;
@@ -45,6 +47,12 @@ public class CameraController2 : MonoBehaviour
         curTilt = Mathf.LerpAngle(curTilt, wishTilt * wallRunTilt, 0.05f);
 
         sway = Vector2.Lerp(sway, Vector2.zero, 0.2f);
+
+        if (Input.GetKey(KeyCode.Mouse1)) 
+        {
+            mainCamera.fieldOfView = zoomFOV;
+            weaponCamera.fieldOfView = zoomFOV;
+        }
     }
 
     void RotateMainCamera()
