@@ -26,13 +26,17 @@ public class UniversalGunSystem : MonoBehaviour
     [Header("Effects")]
     public CamShake camShake;
     public float camShakeMagnitude, camShakeDuration;
-    public GameObject muzzleFlash, bulletHoleGraphics;
-    public TextMeshProUGUI text;
+    public GameObject muzzleFlash, bulletHoleGraphics, bulletHoleFleshGraphics;
+    public TextMeshProUGUI bulletText;
     public float bulletHolesLoadAmount = 3f;
+    public TextMeshProUGUI reloadPromptText;
+    [Space()]
     public AudioClip ShootAudio;
     public AudioClip ReloadAudio;
     public AudioClip OutOfAmmoAudio;
     public AudioSource audioSource;
+    //Recoil
+    private GunRecoil recoilScript;
 
     private void Awake()
     {
@@ -40,6 +44,7 @@ public class UniversalGunSystem : MonoBehaviour
         readyToShoot = true;
 
         audioSource = GetComponent<AudioSource>();
+        recoilScript = transform.GetComponent<GunRecoil>();
     }
 
     private void Update()
@@ -47,7 +52,13 @@ public class UniversalGunSystem : MonoBehaviour
         MyInput();
 
         //Set Text
-        text.SetText(bulletsLeft + "/" + magazineSize);
+        bulletText.SetText(bulletsLeft + "/" + magazineSize);
+
+        reloadPromptText.enabled = false;
+        if(bulletsLeft == 0 && Input.GetKey(KeyCode.Mouse0))
+        {
+            reloadPromptText.enabled = true;
+        }
     }
 
     private void MyInput()
@@ -81,11 +92,12 @@ public class UniversalGunSystem : MonoBehaviour
         //-set
         float x = Random.Range(-usedSpread, usedSpread);
         float y = Random.Range(-usedSpread, usedSpread);
+        float z = Random.Range(-usedSpread, usedSpread);
         //-calculate direction with spread
-        Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
+        Vector3 direction = fpsCam.transform.forward + new Vector3(-x, -y, -z);
 
         //Raycast
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out rayHit, range))
+        if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range))
         {
             if (rayHit.collider.CompareTag("Enemy"))
                 rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
@@ -100,6 +112,11 @@ public class UniversalGunSystem : MonoBehaviour
             GameObject bh = Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.LookRotation(rayHit.normal));
             Destroy(bh, bulletHolesLoadAmount);
         }
+        if (rayHit.normal != Vector3.zero && rayHit.collider.CompareTag("Enemy") && !rayHit.collider.CompareTag("Player"))
+        {
+            GameObject bhf = Instantiate(bulletHoleFleshGraphics, rayHit.point, Quaternion.LookRotation(rayHit.normal));
+            Destroy(bhf, 1);
+        }
         GameObject mf = Instantiate(muzzleFlash, attackPoint);
         mf.transform.parent = attackPoint;
         Destroy(mf, .5f);
@@ -112,7 +129,11 @@ public class UniversalGunSystem : MonoBehaviour
         if(bulletShot > 0 && bulletsLeft > 0)
         Invoke("Shoot", timeBetweenShots);
 
+        //Audio
         audioSource.PlayOneShot(ShootAudio);
+
+        //Recoil
+        recoilScript.RecoilFire();
     }
 
     private void ResetShot()
@@ -122,7 +143,7 @@ public class UniversalGunSystem : MonoBehaviour
 
     private void Reload()
     {
-        audioSource.PlayOneShot(ReloadAudio);
+    audioSource.PlayOneShot(ReloadAudio);
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
     }
@@ -131,5 +152,6 @@ public class UniversalGunSystem : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         reloading = false;
+        reloadPromptText.enabled = false;
     }
 }
