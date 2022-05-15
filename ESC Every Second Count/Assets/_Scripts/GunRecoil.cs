@@ -12,7 +12,6 @@ public class GunRecoil : MonoBehaviour
     [SerializeField] private float recoilX;
     [SerializeField] private float recoilY;
     [SerializeField] private float recoilZ;
-    [SerializeField] private float setBackZ;
 
     //Settings
     [SerializeField] private float snappiness;

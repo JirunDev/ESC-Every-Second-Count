@@ -21,5 +21,4 @@ public class CamShake : MonoBehaviour
             yield return null;
         }
     }
-
 }

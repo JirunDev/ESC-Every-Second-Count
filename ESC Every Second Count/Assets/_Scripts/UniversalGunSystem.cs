@@ -73,6 +73,9 @@ public class UniversalGunSystem : MonoBehaviour
         {
             bulletShot = bulletsPerTap;
             Shoot();
+
+            //Audio
+            audioSource.PlayOneShot(ShootAudio);
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !reloading && bulletsLeft == 0)
@@ -128,9 +131,6 @@ public class UniversalGunSystem : MonoBehaviour
 
         if(bulletShot > 0 && bulletsLeft > 0)
         Invoke("Shoot", timeBetweenShots);
-
-        //Audio
-        audioSource.PlayOneShot(ShootAudio);
 
         //Recoil
         recoilScript.RecoilFire();
