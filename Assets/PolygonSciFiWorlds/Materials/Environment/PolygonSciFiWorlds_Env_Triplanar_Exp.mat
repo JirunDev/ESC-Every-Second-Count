@@ -2,22 +2,30 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: PolygonSciFiWorlds_Env_Triplanar_Exp
-  m_Shader: {fileID: 4800000, guid: 8e3a7be9db42981418988bc59e1916cb, type: 3}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Base_Normal:
         m_Texture: {fileID: 2800000, guid: 2ee8591f903c8aa4382ef533fa1a51af, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -242,11 +250,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _BlendOp: 0
     - _BumpScale: 1
     - _Cliff_Defail_Power: 1
     - _Cliff_Detail_Power: 0.125
     - _Cliff_Detail_Scale: 0.005
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DetailTilingLarge: 0.0202
@@ -270,14 +283,17 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueOffset: 0
     - _RimPower: 2.83
     - _RimPower1: 3.01
+    - _SampleGI: 0
     - _SmoothnessTextureChannel: 0
     - _Snow: 0
     - _Spec_Metallic: 0.254
     - _Spec_Smoothness: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Surface: 0
     - _TransAmbient: 0.179
     - _TransDirect: 0.496
     - _TransNormalDistortion: 0.34
@@ -291,6 +307,7 @@ Material:
     - _smoothness: 0.175
     - _translkucency: 0.443
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _CliffColour: {r: 0, g: 0.110750526, b: 0.17647058, a: 0}
     - _Cliff_Colour: {r: 0.61764705, g: 0.20891005, b: 0.20891005, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
@@ -308,3 +325,17 @@ Material:
     - _Rock_Colour: {r: 0.11372549, g: 0.003921569, b: 0.13333334, a: 1}
     - _Rock_Colour_Primary: {r: 0.11490278, g: 0.0058390982, b: 0.13235295, a: 0}
     - _Rock_Colour_Secondary: {r: 0.11490278, g: 0.0058390982, b: 0.13235295, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &7284035510980363678
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
