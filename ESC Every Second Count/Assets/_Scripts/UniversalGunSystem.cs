@@ -7,7 +7,7 @@ public class UniversalGunSystem : MonoBehaviour
 {
     [Header("Gun Stats")]
     public int damage;
-    public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots;
+    public float timeBetweenShooting, spread, range, reloadTime, timeBetweenShots, accuracy, timeTilMaxSpread;
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
     int bulletsLeft, bulletShot;
@@ -20,7 +20,6 @@ public class UniversalGunSystem : MonoBehaviour
     public Camera fpsCam;
     public Transform attackPoint;
     public RaycastHit rayHit;
-    public LayerMask whatIsEnemy;
     public Rigidbody player;
 
     [Header("Effects")]
@@ -38,6 +37,15 @@ public class UniversalGunSystem : MonoBehaviour
     //Recoil
     private GunRecoil recoilScript;
 
+    //BulletTrails
+    [Header("Effects : Ricocheting")]
+    [SerializeField] private LineRenderer trailLine;
+    [SerializeField] private float shootDelay = 0.001f;
+    [SerializeField] private float speed;
+    [SerializeField] private LayerMask mask;
+    [SerializeField] private bool bouncingBullets;
+    [SerializeField] private float bounceDistance = 10f;
+
     private void Awake()
     {
         bulletsLeft = magazineSize;
@@ -49,8 +57,11 @@ public class UniversalGunSystem : MonoBehaviour
 
     private void Update()
     {
-        MyInput();
-
+        if (!PauseMenu.isPaused)
+        {
+            MyInput();
+        }
+        
         //Set Text
         bulletText.SetText(bulletsLeft + "/" + magazineSize);
 
@@ -92,34 +103,33 @@ public class UniversalGunSystem : MonoBehaviour
         //-more spread on run
         if (player.velocity.magnitude > 0) usedSpread = spread * 1.5f;
         else usedSpread = spread;
-        //-set
+
+        //-set randomness
         float x = Random.Range(-usedSpread, usedSpread);
         float y = Random.Range(-usedSpread, usedSpread);
         float z = Random.Range(-usedSpread, usedSpread);
-        //-calculate direction with spread
+        //-calculate direction/rotation/speed with spread
         Vector3 direction = fpsCam.transform.forward + new Vector3(-x, -y, -z);
 
         //Raycast
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range))
         {
-            if (rayHit.collider.CompareTag("Enemy"))
-                rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
+            if (rayHit.collider.CompareTag("Enemy")) rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
+
+            BulletEffects(rayHit);
+
+            //Graphics (Trails)
+            SpawnBulletTrail(rayHit.point);
+        }
+        else
+        {
+            SpawnBulletTrail(direction * 100);
         }
 
         //Shake camera
         camShake.Shake(camShakeDuration, camShakeMagnitude);
 
-        //Graphics
-        if (rayHit.normal != Vector3.zero && !rayHit.collider.CompareTag("Enemy") && !rayHit.collider.CompareTag("Player")) 
-        {
-            GameObject bh = Instantiate(bulletHoleGraphics, rayHit.point, Quaternion.LookRotation(rayHit.normal));
-            Destroy(bh, bulletHolesLoadAmount);
-        }
-        if (rayHit.normal != Vector3.zero && rayHit.collider.CompareTag("Enemy") && !rayHit.collider.CompareTag("Player"))
-        {
-            GameObject bhf = Instantiate(bulletHoleFleshGraphics, rayHit.point, Quaternion.LookRotation(rayHit.normal));
-            Destroy(bhf, 1);
-        }
+        //Graphics (Muzzle Flash)
         GameObject mf = Instantiate(muzzleFlash, attackPoint);
         mf.transform.parent = attackPoint;
         Destroy(mf, .5f);
@@ -141,7 +151,7 @@ public class UniversalGunSystem : MonoBehaviour
         readyToShoot = true;
     }
 
-    private void Reload()
+    public void Reload()
     {
     audioSource.PlayOneShot(ReloadAudio);
         reloading = true;
@@ -153,5 +163,87 @@ public class UniversalGunSystem : MonoBehaviour
         bulletsLeft = magazineSize;
         reloading = false;
         reloadPromptText.enabled = false;
+    }
+
+    private void BulletEffects(RaycastHit rH)
+    {
+        if (rH.normal != Vector3.zero && !rH.collider.CompareTag("Enemy") && !rH.collider.CompareTag("Player"))
+        {
+            GameObject bh = Instantiate(bulletHoleGraphics, rH.point, Quaternion.LookRotation(rH.normal));
+            Destroy(bh, bulletHolesLoadAmount);
+        }
+        if (rH.normal != Vector3.zero && rH.collider.CompareTag("Enemy") && !rH.collider.CompareTag("Player"))
+        {
+            rH.collider.GetComponent<Enemy>().TakeDamage(damage);
+
+            GameObject bhf = Instantiate(bulletHoleFleshGraphics, rH.point, Quaternion.LookRotation(rH.normal));
+            Destroy(bhf, 1);
+        }
+    }
+
+    private void SpawnBulletTrail(Vector3 hitPoint)
+    {
+        GameObject trailEffect = Instantiate(trailLine.gameObject, attackPoint.position, Quaternion.identity);
+
+        LineRenderer lineRen = trailEffect.GetComponent<LineRenderer>();
+
+        lineRen.SetPosition(0, attackPoint.position);
+        lineRen.SetPosition(1, hitPoint);
+
+        Destroy(trailEffect, 0.5f);
+    }
+
+    private IEnumerator SpawnTrail(TrailRenderer trail, Vector3 hitPoint, Vector3 hitNormal, float bounceDistance, bool madeImpact, RaycastHit raycastHit)
+    {
+        Vector3 startPosition = trail.transform.position;
+        Vector3 dir = (hitPoint - trail.transform.position).normalized;
+
+        float distance = Vector3.Distance(trail.transform.position, hitPoint);
+        float startingDistance = distance;
+
+        while (distance > 0)
+        {
+            trail.transform.position = Vector3.Lerp(startPosition, hitPoint, 1 - (distance / startingDistance));
+            distance -= Time.deltaTime * speed;
+
+            yield return null;
+        }
+
+        trail.transform.position = hitPoint;
+
+        if (madeImpact)
+        {
+            BulletEffects(raycastHit);
+
+            if (bouncingBullets && bounceDistance > 0)
+            {
+                Vector3 bounceDirection = Vector3.Reflect(dir, hitNormal);
+
+                if (Physics.Raycast(hitPoint, bounceDirection, out RaycastHit hit, bounceDistance, mask))
+                {
+                    yield return StartCoroutine(SpawnTrail(
+                        trail,
+                        hit.point,
+                        hit.normal,
+                        bounceDistance - Vector3.Distance(hit.point, hitPoint),
+                        true,
+                        hit
+                    ));
+                }
+                else
+                {
+                    yield return StartCoroutine(SpawnTrail(
+                        trail,
+                        bounceDirection * bounceDistance,
+                        Vector3.zero,
+                        0,
+                        false,
+                        hit
+                    ));
+                }
+            }
+        }
+
+        Destroy(trail.gameObject, trail.time);
     }
 }

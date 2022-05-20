@@ -7,8 +7,8 @@ public class CameraController2 : MonoBehaviour
     [Header("Camera")]
     public Camera mainCamera;
     public Camera weaponCamera;
-    [SerializeField] private float sensX = 1f;
-    [SerializeField] private float sensY = 1f;
+    public static float sensX = 1f;
+    public static float sensY = 1f;
     [SerializeField] private float baseFov = 90f;
     [SerializeField] private float maxFov = 140f;
     [SerializeField] private float wallRunTilt = 15f;
@@ -32,7 +32,10 @@ public class CameraController2 : MonoBehaviour
 
     void Update()
     {
-        RotateMainCamera();
+        if (!PauseMenu.isPaused)
+        {
+            RotateMainCamera();
+        }
     }
 
     void FixedUpdate()
