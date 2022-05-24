@@ -28,7 +28,7 @@ public class GunItems : MonoBehaviour
             if (triggerNumber != 0 && !checkStartTimer)
             {
                 checkStartTimer = true;
-                countdownValue = Random.Range(5,6);
+                countdownValue = Random.Range(25,76);
             }
         }
     }

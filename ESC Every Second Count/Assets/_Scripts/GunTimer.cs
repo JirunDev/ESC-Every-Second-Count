@@ -13,8 +13,10 @@ public class GunTimer : MonoBehaviour, IPointerClickHandler
     }
 
     [SerializeField] private TextMeshProUGUI uiText;
+    [SerializeField] private GameObject cdText;
+    public Toggle pickGun;
     public static int Duration = 0;
-    private int remainingDuration;
+    public static int remainingDuration;
     private bool Pause;
     private bool checkStartTimer = false;
 
@@ -30,6 +32,8 @@ public class GunTimer : MonoBehaviour, IPointerClickHandler
             checkStartTimer = true;
 
             audioSource.PlayOneShot(pickUpSound);
+            pickGun.isOn = true;
+            cdText.SetActive(true);
 
             Being(Duration);
         }
@@ -63,5 +67,8 @@ public class GunTimer : MonoBehaviour, IPointerClickHandler
         uiText.color = Color.red;
         Duration = 0;
         checkStartTimer = false;
+
+        pickGun.isOn = false;
+        cdText.SetActive(false);
     }
 }

@@ -16,11 +16,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject loadingScreen;
     public Slider loadingBar;
 
-    void Start()
-    {
-        pauseMenu.SetActive(false);
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

@@ -7,7 +7,7 @@ using TMPro;
 public class NormalTimer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI uiText;
-    private float time = 0;
+    public static float time = 0;
 
     void Update()
     {
