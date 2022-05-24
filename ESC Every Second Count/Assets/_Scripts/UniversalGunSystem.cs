@@ -27,8 +27,9 @@ public class UniversalGunSystem : MonoBehaviour
     public float camShakeMagnitude, camShakeDuration;
     public GameObject muzzleFlash, bulletHoleGraphics, bulletHoleFleshGraphics;
     public TextMeshProUGUI bulletText;
+    public TextMeshProUGUI magazineText;
     public float bulletHolesLoadAmount = 3f;
-    public TextMeshProUGUI reloadPromptText;
+    public GameObject reloadPromptText;
     [Space()]
     public AudioClip ShootAudio;
     public AudioClip ReloadAudio;
@@ -63,12 +64,13 @@ public class UniversalGunSystem : MonoBehaviour
         }
         
         //Set Text
-        bulletText.SetText(bulletsLeft + "/" + magazineSize);
+        bulletText.SetText(bulletsLeft.ToString());
+        magazineText.SetText(magazineSize.ToString());
 
-        reloadPromptText.enabled = false;
+
         if(bulletsLeft == 0 && Input.GetKey(KeyCode.Mouse0))
         {
-            reloadPromptText.enabled = true;
+            reloadPromptText.SetActive(true);
         }
     }
 
@@ -162,7 +164,7 @@ public class UniversalGunSystem : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         reloading = false;
-        reloadPromptText.enabled = false;
+        reloadPromptText.SetActive(false);
     }
 
     private void BulletEffects(RaycastHit rH)

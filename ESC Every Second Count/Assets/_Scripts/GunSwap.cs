@@ -9,6 +9,7 @@ public class GunSwap : MonoBehaviour
     [SerializeField] private Transform[] weapons;
     public TextMeshProUGUI reloadPromptText;
     public TextMeshProUGUI bulletAmountText;
+    public TextMeshProUGUI magazineAmountText;
 
     [Header("Triggers")]
     [SerializeField] private int[] keys;
@@ -44,16 +45,25 @@ public class GunSwap : MonoBehaviour
         {
             reloadPromptText.enabled = true;
             bulletAmountText.enabled = true;
+            magazineAmountText.enabled = true;
         }
         else
         {
             reloadPromptText.enabled = false;
             bulletAmountText.enabled = false;
+            magazineAmountText.enabled = false;
         }
 
         int previousSelectedWeapon = selectedWeapon;
 
-        triggerNumber = GunItems.triggerNumber;
+        if (GunTimer.Duration > 0)
+        {
+            triggerNumber = GunItems.triggerNumber;
+        }
+        else
+        {
+            triggerNumber = 0;
+        }
 
         if(timeSinceLastSwitch >= switchTime)
         {
