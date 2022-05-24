@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class ExplosionBullet : MonoBehaviour
 {
     //Assignables
     private Rigidbody rb;
@@ -26,7 +26,6 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<Collider>().isTrigger = true;
         rb = GetComponent<Rigidbody>();
         Setup();
     }
@@ -58,13 +57,13 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnCollisionEnter(Collision collision)
     {
         // Count up collisions
         collisions++;
 
         //Explode if collide with enemy and explodeOnTouch is activated
-        if (collider.CompareTag("Player") && explodeOnTouch) Explode();
+        if (collision.collider.CompareTag("Player") && explodeOnTouch) Explode();
     }
     private void Setup()
     {

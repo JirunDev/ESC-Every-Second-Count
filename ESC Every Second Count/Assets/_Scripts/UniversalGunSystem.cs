@@ -114,7 +114,7 @@ public class UniversalGunSystem : MonoBehaviour
         //Raycast
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range))
         {
-            if (rayHit.collider.CompareTag("Enemy")) rayHit.collider.GetComponent<Enemy>().TakeDamage(damage);
+            if (rayHit.collider.CompareTag("Enemy")) rayHit.collider.GetComponent<Enemy>().GetHealthSystem().Damage(damage);
 
             BulletEffects(rayHit);
 
@@ -174,7 +174,7 @@ public class UniversalGunSystem : MonoBehaviour
         }
         if (rH.normal != Vector3.zero && rH.collider.CompareTag("Enemy") && !rH.collider.CompareTag("Player"))
         {
-            rH.collider.GetComponent<Enemy>().TakeDamage(damage);
+            rH.collider.GetComponent<Enemy>().GetHealthSystem().Damage(damage);
 
             GameObject bhf = Instantiate(bulletHoleFleshGraphics, rH.point, Quaternion.LookRotation(rH.normal));
             Destroy(bhf, 1);

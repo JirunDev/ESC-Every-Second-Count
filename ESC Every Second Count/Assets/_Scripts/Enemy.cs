@@ -5,18 +5,14 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Enemy Stats")]
-    public float health;
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        if (health <= 0) Destroy(gameObject);
-    }
+    [SerializeField] private int health;
+    private HealthSystem healthSystem;
 
     private NavMeshAgent agent;
 
     private Transform player;
+
+    public HealthBar healthBar;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -42,10 +38,18 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        healthSystem = new HealthSystem(health);
+        healthSystem.OnDamaged += Enemy_OnDamaged;
+
+        healthBar.Setup(healthSystem);
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
+    public void Enemy_OnDamaged(object sender, System.EventArgs e) {
+        if (healthSystem.GetHealth() < 0) Destroy(gameObject);
+    }
     private void Update()
     {
         // Check for in sight and attack range
@@ -121,4 +125,8 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
+    public HealthSystem GetHealthSystem()
+    {
+        return healthSystem;
+    }
 }
