@@ -62,13 +62,13 @@ public class UniversalGunSystem : MonoBehaviour
         {
             MyInput();
         }
-        
+
         //Set Text
         bulletText.SetText(bulletsLeft.ToString());
         magazineText.SetText(magazineSize.ToString());
 
 
-        if(bulletsLeft == 0 && Input.GetKey(KeyCode.Mouse0))
+        if (bulletsLeft == 0 && Input.GetKey(KeyCode.Mouse0))
         {
             reloadPromptText.SetActive(true);
         }
@@ -125,7 +125,7 @@ public class UniversalGunSystem : MonoBehaviour
         }
         else
         {
-            SpawnBulletTrail(direction * 100);
+            SpawnBulletTrail(direction * 1000);
         }
 
         //Shake camera
@@ -141,8 +141,8 @@ public class UniversalGunSystem : MonoBehaviour
 
         Invoke("ResetShot", timeBetweenShooting);
 
-        if(bulletShot > 0 && bulletsLeft > 0)
-        Invoke("Shoot", timeBetweenShots);
+        if (bulletShot > 0 && bulletsLeft > 0)
+            Invoke("Shoot", timeBetweenShots);
 
         //Recoil
         recoilScript.RecoilFire();
@@ -155,7 +155,7 @@ public class UniversalGunSystem : MonoBehaviour
 
     public void Reload()
     {
-    audioSource.PlayOneShot(ReloadAudio);
+        audioSource.PlayOneShot(ReloadAudio);
         reloading = true;
         Invoke("ReloadFinished", reloadTime);
     }
@@ -193,59 +193,5 @@ public class UniversalGunSystem : MonoBehaviour
         lineRen.SetPosition(1, hitPoint);
 
         Destroy(trailEffect, 0.5f);
-    }
-
-    private IEnumerator SpawnTrail(TrailRenderer trail, Vector3 hitPoint, Vector3 hitNormal, float bounceDistance, bool madeImpact, RaycastHit raycastHit)
-    {
-        Vector3 startPosition = trail.transform.position;
-        Vector3 dir = (hitPoint - trail.transform.position).normalized;
-
-        float distance = Vector3.Distance(trail.transform.position, hitPoint);
-        float startingDistance = distance;
-
-        while (distance > 0)
-        {
-            trail.transform.position = Vector3.Lerp(startPosition, hitPoint, 1 - (distance / startingDistance));
-            distance -= Time.deltaTime * speed;
-
-            yield return null;
-        }
-
-        trail.transform.position = hitPoint;
-
-        if (madeImpact)
-        {
-            BulletEffects(raycastHit);
-
-            if (bouncingBullets && bounceDistance > 0)
-            {
-                Vector3 bounceDirection = Vector3.Reflect(dir, hitNormal);
-
-                if (Physics.Raycast(hitPoint, bounceDirection, out RaycastHit hit, bounceDistance, mask))
-                {
-                    yield return StartCoroutine(SpawnTrail(
-                        trail,
-                        hit.point,
-                        hit.normal,
-                        bounceDistance - Vector3.Distance(hit.point, hitPoint),
-                        true,
-                        hit
-                    ));
-                }
-                else
-                {
-                    yield return StartCoroutine(SpawnTrail(
-                        trail,
-                        bounceDirection * bounceDistance,
-                        Vector3.zero,
-                        0,
-                        false,
-                        hit
-                    ));
-                }
-            }
-        }
-
-        Destroy(trail.gameObject, trail.time);
     }
 }

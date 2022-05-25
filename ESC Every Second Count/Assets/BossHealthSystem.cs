@@ -1,12 +1,12 @@
 using System;
 
-public class HealthSystem
+public class BossHealthSystem
 {
     public event EventHandler OnDamaged;
     public event EventHandler OnHealed;
     private int health;
     private int healthMax;
-    public HealthSystem(int _healthMax)
+    public BossHealthSystem(int _healthMax)
     {
         healthMax = _healthMax;
         health = healthMax;

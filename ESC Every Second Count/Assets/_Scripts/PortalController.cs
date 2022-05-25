@@ -11,15 +11,19 @@ public class PortalController : MonoBehaviour
     public TextMeshPro timer;
     public GameObject pressE;
     public Toggle activToggle;
+    public AudioClip pingPong;
 
     private bool isBooting = false;
     public static int countDown;
     private int remainingDuration;
     private bool usedOncePerMap = true;
 
+    private AudioSource audioSource;
+
     private void Start()
     {
-        countDown = Random.Range(5,10);
+        audioSource = GetComponent<AudioSource>();
+        countDown = Random.Range(215,361);
     }
 
     void Update()
@@ -31,6 +35,7 @@ public class PortalController : MonoBehaviour
             isBooting = false;
             usedOncePerMap = false;
             activToggle.isOn = true;
+            audioSource.PlayOneShot(pingPong);
         }
     }
     private void Being(int Second)
