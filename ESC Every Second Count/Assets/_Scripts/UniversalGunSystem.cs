@@ -115,6 +115,8 @@ public class UniversalGunSystem : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, direction, out rayHit, range))
         {
             if (rayHit.collider.CompareTag("Enemy")) rayHit.collider.GetComponent<Enemy>().GetHealthSystem().Damage(damage);
+            else if (rayHit.collider.CompareTag("Boss1")) rayHit.collider.GetComponent<Boss1Logic>().GetHealthSystem().Damage(damage);
+            else if (rayHit.collider.CompareTag("Shield")) rayHit.collider.GetComponent<PowerPillar>().GetHealthSystem().Damage(damage);
 
             BulletEffects(rayHit);
 

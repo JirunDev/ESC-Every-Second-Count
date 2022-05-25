@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
     {
         healthSystem = new HealthSystem(health);
         healthSystem.OnDamaged += Enemy_OnDamaged;
+        healthSystem.OnDead += Enemy_OnDead;
 
         healthBar.Setup(healthSystem);
 
@@ -48,7 +49,12 @@ public class Enemy : MonoBehaviour
     }
 
     public void Enemy_OnDamaged(object sender, System.EventArgs e) {
-        if (healthSystem.GetHealth() < 0) Destroy(gameObject);
+        if (healthSystem.isDead()) Destroy(gameObject);
+    }
+
+    public void Enemy_OnDead(object sender, System.EventArgs e)
+    {
+        Destroy(gameObject);
     }
     private void Update()
     {
@@ -129,4 +135,10 @@ public class Enemy : MonoBehaviour
     {
         return healthSystem;
     }
+
+    public void KillEnemy()
+    {
+        healthSystem.Damage(10000);
+    }
+
 }

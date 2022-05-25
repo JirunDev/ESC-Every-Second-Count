@@ -24,9 +24,12 @@ public class Bullet : MonoBehaviour
     int collisions;
     PhysicMaterial physics_mat;
 
+    private Transform player;
+
     private void Start()
     {
         GetComponent<Collider>().isTrigger = true;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
         Setup();
     }
@@ -42,7 +45,8 @@ public class Bullet : MonoBehaviour
     }
     private void Explode()
     {
-        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+        Vector3 bloodDir = transform.position - player.position;
+        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.LookRotation(bloodDir, Vector3.up));
 
         // Check player in range
         Collider[] players = Physics.OverlapSphere(transform.position, explosionRange, whatIsPlayer);
