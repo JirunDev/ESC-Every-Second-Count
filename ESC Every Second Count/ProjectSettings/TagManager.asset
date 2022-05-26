@@ -4,26 +4,30 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Checkpoint
+  - CheckPoint
   - Enemy
+  - Bullet
+  - Head
+  - Limbs
   - Boss1
   - Shield
   - HealthBar
-  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
+  - Floor
   - Ground
   - Weapon
   - Player
   - Enemy
   - 
   - 
-  - 
-  - 
+  -  
   - 
   - 
   - 
