@@ -38,7 +38,7 @@ public class Damage : MonoBehaviour
     {
         if (dataFromCollision.gameObject.name == "Bullet(Clone)")
         {
-            TakeDamage(20);
+            TakeDamage(10);
         }
     }
 
@@ -64,5 +64,17 @@ public class Damage : MonoBehaviour
     public void SetSpawnPoint(Vector3 newPosition)
     {
         respawnPoint = newPosition;
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.name == "Health")
+        {
+            TakeDamage(-1);
+        }
+        if (other.name == "Damage")
+        {
+            TakeDamage(1);
+        }
     }
 }
