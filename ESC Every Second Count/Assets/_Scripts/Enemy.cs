@@ -6,13 +6,13 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int health;
-    private HealthSystem healthSystem;
+    private BossHealthSystem healthSystem;
 
     private NavMeshAgent agent;
 
     private Transform player;
 
-    public HealthBar healthBar;
+    public BossHealthBar healthBar;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        healthSystem = new HealthSystem(health);
+        healthSystem = new BossHealthSystem(health);
         healthSystem.OnDamaged += Enemy_OnDamaged;
         healthSystem.OnDead += Enemy_OnDead;
 
@@ -131,7 +131,7 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
-    public HealthSystem GetHealthSystem()
+    public BossHealthSystem GetHealthSystem()
     {
         return healthSystem;
     }

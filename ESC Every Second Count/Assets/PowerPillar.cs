@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PowerPillar : MonoBehaviour
 {
-    private HealthBar healthBar;
-    private HealthSystem healthSystem;
+    private BossHealthBar healthBar;
+    private BossHealthSystem healthSystem;
 
     [SerializeField] private int shieldHealth;
 
@@ -16,8 +16,8 @@ public class PowerPillar : MonoBehaviour
 
     private void Awake()
     {
-        healthBar = transform.Find("HealthBar").GetComponent<HealthBar>();
-        healthSystem = new HealthSystem(shieldHealth);
+        healthBar = transform.Find("HealthBar").GetComponent<BossHealthBar>();
+        healthSystem = new BossHealthSystem(shieldHealth);
         healthBar.Setup(healthSystem);
 
         healthSystem.OnDamaged += OnShieldDamaged;
@@ -32,7 +32,7 @@ public class PowerPillar : MonoBehaviour
         }
     }
 
-    public HealthSystem GetHealthSystem()
+    public BossHealthSystem GetHealthSystem()
     {
         return healthSystem;
     }

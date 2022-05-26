@@ -5,13 +5,13 @@ using UnityEngine.AI;
 public class Boss1Logic : MonoBehaviour
 {
     [SerializeField] private int health;
-    private HealthSystem healthSystem;
+    private BossHealthSystem healthSystem;
 
     private NavMeshAgent agent;
 
     private Transform player;
 
-    public HealthBar healthBar;
+    public BossHealthBar healthBar;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -39,7 +39,7 @@ public class Boss1Logic : MonoBehaviour
 
     private void Awake()
     {
-        healthSystem = new HealthSystem(health);
+        healthSystem = new BossHealthSystem(health);
 
         healthBar.Setup(healthSystem);
 
@@ -135,7 +135,7 @@ public class Boss1Logic : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
-    public HealthSystem GetHealthSystem()
+    public BossHealthSystem GetHealthSystem()
     {
         return healthSystem;
     }
