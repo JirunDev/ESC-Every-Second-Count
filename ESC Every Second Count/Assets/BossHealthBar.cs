@@ -13,6 +13,7 @@ public class BossHealthBar : MonoBehaviour
 
     private void Update()
     {
-        transform.Find("Bar").localScale = new Vector3(healthSystem.GetHealthPercent(), 1);
+        Transform healthBar = transform.Find("Bar");
+        healthBar.localScale = new Vector3(healthSystem.GetHealthPercent(), 1);
     }
 }
