@@ -5,6 +5,8 @@ using UnityEngine;
 public class GunItems : MonoBehaviour
 {
     public static int triggerNumber = 0;
+    public static int countdownValue = 0;
+    private bool checkStartTimer = false;
 
     void OnTriggerEnter(Collider other)
     {
@@ -22,6 +24,21 @@ public class GunItems : MonoBehaviour
                 triggerNumber = 5;
             if (transform.name == "Reset")
                 triggerNumber = 0;
+
+            if (triggerNumber != 0 && !checkStartTimer)
+            {
+                checkStartTimer = true;
+                countdownValue = Random.Range(25,76);
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (GunTimer.Duration != 0)
+        {
+            checkStartTimer = false;
+            countdownValue = 0;
         }
     }
 }

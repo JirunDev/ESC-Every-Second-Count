@@ -40,7 +40,6 @@ public class Boss1Logic : MonoBehaviour
     private void Awake()
     {
         healthSystem = new BossHealthSystem(health);
-
         healthBar.Setup(healthSystem);
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -134,7 +133,7 @@ public class Boss1Logic : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-
+	
     public BossHealthSystem GetHealthSystem()
     {
         return healthSystem;
