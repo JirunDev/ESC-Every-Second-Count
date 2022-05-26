@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBar : MonoBehaviour
+public class BossHealthBar : MonoBehaviour
 {
-    private HealthSystem healthSystem;
+    private BossHealthSystem healthSystem;
 
-    public void Setup(HealthSystem _healthSystem)
+    public void Setup(BossHealthSystem _healthSystem)
     {
         healthSystem = _healthSystem;
     }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Boss1Logic : MonoBehaviour
 {
-    public HealthBar healthBar;
+    public BossHealthBar healthBar;
 
-    private HealthSystem healthSystem;
+    private BossHealthSystem healthSystem;
     [SerializeField] private int bossHealth = 1000;
     private enum State { 
         Rest,
@@ -15,11 +15,11 @@ public class Boss1Logic : MonoBehaviour
 
     private void Awake()
     {
-        healthSystem = new HealthSystem(bossHealth);
+        healthSystem = new BossHealthSystem(bossHealth);
         healthBar.Setup(healthSystem);
     }
 
-    public HealthSystem GetHealthSystem()
+    public BossHealthSystem GetHealthSystem()
     {
         return healthSystem;
     }
