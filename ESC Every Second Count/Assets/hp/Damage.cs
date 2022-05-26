@@ -47,7 +47,7 @@ public class Damage : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        if(currentHealth <= 0)
+        if(currentHealth == 0)
         {
             Respawn();
             currentHealth = maxHealth;
