@@ -10,6 +10,9 @@ TagManager:
   - Bullet
   - Head
   - Limbs
+  - Boss1
+  - Shield
+  - HealthBar
   layers:
   - Default
   - TransparentFX
@@ -18,13 +21,13 @@ TagManager:
   - Water
   - UI
   - Floor
+  - Ground
+  - Weapon
+  - Player
+  - Enemy
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -  
   - 
   - 
   - 

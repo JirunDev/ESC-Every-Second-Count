@@ -51,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
 
     CapsuleCollider col;
 
+    [Space]
+    public GameObject footSound;
+    float elapsed = 0f;
+
     enum Mode
     {
         Walking,
@@ -137,6 +141,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         jump = false;
+
+        //sounds
+        if (!running)
+        {
+            elapsed += 2.8f*Time.deltaTime;
+        }
+        else
+        {
+            elapsed += 4f*Time.deltaTime;
+        }
     }
 
 
@@ -297,6 +311,16 @@ public class PlayerMovement : MonoBehaviour
             direction += slopeCorrection;
 
             rb.AddForce(direction, ForceMode.Acceleration);
+
+            //sounds
+            if (spid.magnitude > 1f)
+            {
+                if (elapsed >= 1f)
+                {
+                    elapsed = elapsed % 1f;
+                    footSound.GetComponent<FootstepsSFX>().Step();
+                }
+            }
         }
     }
 
@@ -338,6 +362,9 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(jumpOffWall, ForceMode.VelocityChange);
             wrTimer = 0f;
             EnterFlying(true);
+
+            //sounds
+            footSound.GetComponent<FootstepsSFX>().Jump();
         }
         else if (wrTimer == 0f || crouched)
         {
@@ -370,6 +397,16 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(antiGravityForce, ForceMode.Acceleration);
             if (distance.magnitude > wallStickDistance) distance = Vector3.zero;
             rb.AddForce(distance * wallStickiness, ForceMode.Acceleration);
+
+            //sounds
+            if (rb.velocity != Vector3.zero)
+            {
+                if (elapsed >= 1f)
+                {
+                    elapsed = elapsed % 1f;
+                    footSound.GetComponent<FootstepsSFX>().Step();
+                }
+            }
         }
         if (!grounded)
         {
@@ -386,6 +423,9 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(new Vector3(0, upForce, 0), ForceMode.VelocityChange);
             StartCoroutine(jumpCooldownCoroutine(0.2f));
             EnterFlying(true);
+
+            //sounds
+            footSound.GetComponent<FootstepsSFX>().Jump();
         }
     }
 
@@ -424,6 +464,9 @@ public class PlayerMovement : MonoBehaviour
             }
 
             canDJump = false;
+
+            //sounds
+            footSound.GetComponent<FootstepsSFX>().Jump();
         }
     }
     #endregion
