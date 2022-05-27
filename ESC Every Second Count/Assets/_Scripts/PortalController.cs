@@ -82,6 +82,7 @@ public class PortalController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && collision.tag == "Player")
         {
             isBooting = true;
+            pressE.SetActive(false);
         }
     }
 }

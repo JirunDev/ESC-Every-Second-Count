@@ -52,7 +52,8 @@ public class Bullet : MonoBehaviour
         Collider[] players = Physics.OverlapSphere(transform.position, explosionRange, whatIsPlayer);
         for (int i = 0; i < players.Length; i++) // if there is multiplayer
         {
-            // Player take damage ******** (include later)
+            // Player take damage
+            player.GetComponent<Damage>().TakeDamage(5);
         }
 
         Invoke(nameof(Delay), 0.01f);
