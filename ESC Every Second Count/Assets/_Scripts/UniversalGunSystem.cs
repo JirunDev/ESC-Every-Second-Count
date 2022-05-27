@@ -24,7 +24,6 @@ public class UniversalGunSystem : MonoBehaviour
 
     [Header("Effects")]
     public CamShake camShake;
-    public float camShakeMagnitude, camShakeDuration;
     public GameObject muzzleFlash, bulletHoleGraphics, bulletHoleFleshGraphics;
     public TextMeshProUGUI bulletText;
     public TextMeshProUGUI magazineText;
@@ -37,6 +36,8 @@ public class UniversalGunSystem : MonoBehaviour
     public AudioSource audioSource;
     //Recoil
     private GunRecoil recoilScript;
+    //CamShake
+    private float camShakeMagnitude = 0, camShakeDuration = 0;
 
     //BulletTrails
     [Header("Effects : Ricocheting")]

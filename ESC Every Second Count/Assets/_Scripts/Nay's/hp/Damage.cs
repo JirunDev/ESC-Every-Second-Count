@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    public GameObject bulletNormal;
-    public GameObject bulletExp;
     /*public GameObject bodypart;
 
     RaycastHit hitRay;*/
@@ -16,15 +14,13 @@ public class Damage : MonoBehaviour
     public HealthBar healthBar;
 
     [SerializeField] private Transform player;
-    private Vector3 respawnPoint;
+    public GameObject respawnPoint;
     public GameObject respawnedPrompt;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        
-        respawnPoint = player.transform.position;
     }
 
     void FixedUpdate()
@@ -40,25 +36,12 @@ public class Damage : MonoBehaviour
             hit.collider.gameObject
     }*/
 
-    void OnCollisionEnter(Collision dataFromCollision)
-    {
-        if (dataFromCollision.gameObject == bulletNormal)
-        {
-            TakeDamage(5);
-        }
-        if (dataFromCollision.gameObject == bulletExp)
-        {
-            TakeDamage(15);
-        }
-
-    }
-
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        if(currentHealth == 0)
+        if(currentHealth <= 0)
         {
             Respawn();
             currentHealth = maxHealth;
@@ -68,7 +51,7 @@ public class Damage : MonoBehaviour
 
     public void Respawn()
     {
-        player.transform.position = respawnPoint;
+        player.transform.position = respawnPoint.transform.position;
         currentHealth = maxHealth;
 
         StartCoroutine(RespawnPrompt());
@@ -79,7 +62,7 @@ public class Damage : MonoBehaviour
 
     public void SetSpawnPoint(Vector3 newPosition)
     {
-        respawnPoint = newPosition;
+        respawnPoint.transform.position = newPosition;
     }
 
     void OnTriggerStay(Collider other)
@@ -96,8 +79,10 @@ public class Damage : MonoBehaviour
 
     IEnumerator RespawnPrompt()
     {
+        respawnPoint.SetActive(true);
         respawnedPrompt.SetActive(true);
         yield return new WaitForSeconds(5);
         respawnedPrompt.SetActive(false);
+        respawnPoint.SetActive(false);
     }
 }

@@ -53,7 +53,7 @@ public class Bullet : MonoBehaviour
         for (int i = 0; i < players.Length; i++) // if there is multiplayer
         {
             // Player take damage
-            player.GetComponent<Damage>().TakeDamage(5);
+            player.GetComponent<Damage>().TakeDamage(3);
         }
 
         Invoke(nameof(Delay), 0.01f);

@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
         healthSystem.OnDamaged += Enemy_OnDamaged;
         healthSystem.OnDead += Enemy_OnDead;
 
-        healthBar = new BossHealthBar();
+        //healthBar = new BossHealthBar();
         healthBar.Setup(healthSystem);
 
         player = GameObject.FindGameObjectWithTag("Player").transform;

@@ -37,7 +37,7 @@ public class HeadBop : MonoBehaviour
         if (_rb.velocity.magnitude > 6.1f) CheckMotion(_runFrequency);
         else CheckMotion(_walkFrequency);
 
-        _camera.LookAt(FocusTarget());
+        //_camera.LookAt(FocusTarget());
     }
 
     private void PlayMotion(Vector3 motion)
@@ -73,6 +73,7 @@ public class HeadBop : MonoBehaviour
     {
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + _cameraHolder.localPosition.y, transform.position.z);
         pos += _cameraHolder.forward * 15.0f;
+        print(pos);
         return pos;
     }
 }
