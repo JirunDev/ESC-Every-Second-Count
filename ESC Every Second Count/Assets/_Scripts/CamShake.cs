@@ -11,8 +11,8 @@ public class CamShake : MonoBehaviour
         float elapsed = 0.0f;
         while(elapsed < duration)
         {
-            float x = Random.Range(-.5f, .5f) * magnitude;
-            float y = Random.Range(-.5f, .5f) * magnitude;
+            float x = Random.Range(-.1f, .1f) * magnitude;
+            float y = Random.Range(-.1f, .1f) * magnitude;
 
             transform.localPosition = new Vector3(x, y, origPos.z);
 
