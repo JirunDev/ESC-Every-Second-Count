@@ -24,8 +24,11 @@ public class ExplosionBullet : MonoBehaviour
     int collisions;
     PhysicMaterial physics_mat;
 
+    private Transform player;
+
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
         Setup();
     }
@@ -48,6 +51,7 @@ public class ExplosionBullet : MonoBehaviour
         for (int i = 0; i < players.Length; i++) // if there is multiplayer
         {
             // Player take damage ******** (include later)
+            player.GetComponent<Damage>().TakeDamage(15);
         }
 
         Invoke(nameof(Delay), 0.01f);

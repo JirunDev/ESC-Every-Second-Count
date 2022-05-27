@@ -97,7 +97,8 @@ public class Boss1Logic : MonoBehaviour
         if (!alreadyAttacked)
         {
             // Attack!
-            Rigidbody rb = Instantiate(projectile, shotPoint.transform.position, Quaternion.LookRotation(player.transform.position, Vector3.up)).GetComponent<Rigidbody>();
+            //Rigidbody rb = Instantiate(projectile, shotPoint.transform.position, Quaternion.LookRotation(player.transform.position, Vector3.up)).GetComponent<Rigidbody>();
+            Rigidbody rb = Instantiate(projectile, shotPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * horizontalSpeed, ForceMode.Impulse);
             rb.AddForce(transform.up * verticalSpeed, ForceMode.Impulse);
 

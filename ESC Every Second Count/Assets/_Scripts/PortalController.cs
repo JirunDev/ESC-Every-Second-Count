@@ -23,7 +23,7 @@ public class PortalController : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        countDown = Random.Range(215,361);
+        countDown = Random.Range(1,2);
     }
 
     void Update()
@@ -82,6 +82,7 @@ public class PortalController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && collision.tag == "Player")
         {
             isBooting = true;
+            pressE.SetActive(false);
         }
     }
 }
