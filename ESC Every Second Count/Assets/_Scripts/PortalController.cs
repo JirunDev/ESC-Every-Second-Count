@@ -23,7 +23,7 @@ public class PortalController : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        countDown = Random.Range(1,2);
+        countDown = Random.Range(210,241);
     }
 
     void Update()

@@ -16388,7 +16388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9914fad23dd5c45b3e40e04b0ec1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
   timeBetweenShooting: 0.1
   spread: 0.03
   range: 70
@@ -21128,7 +21128,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!222 &2215641007460202833
 CanvasRenderer:
   m_ObjectHideFlags: 0
