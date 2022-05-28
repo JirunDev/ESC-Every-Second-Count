@@ -17,6 +17,7 @@ public class LevelCompleteScreen : MonoBehaviour
     public TextMeshProUGUI exTimeCons;
     public TextMeshProUGUI exTimeConsScore;
     public TextMeshProUGUI totalScore;
+    public int timeLimit = 120;
     [Header("Game Objects")]
     public Rigidbody player;
     public GameObject loadingScreen;
@@ -69,10 +70,10 @@ public class LevelCompleteScreen : MonoBehaviour
             exGunTimerScore.color = Color.red;
         }
 
-        if ((((int)time) - PortalController.countDown - 120) > 0)
+        if ((((int)time) - PortalController.countDown - timeLimit) > 0)
         {
-            score -= (((int)time) - PortalController.countDown - 120);
-            exTimeConsScore.text = $"-{(((int)time) - PortalController.countDown - 120)}";
+            score -= (((int)time) - PortalController.countDown - timeLimit);
+            exTimeConsScore.text = $"-{(((int)time) - PortalController.countDown - timeLimit)}";
         }
         else
         {
