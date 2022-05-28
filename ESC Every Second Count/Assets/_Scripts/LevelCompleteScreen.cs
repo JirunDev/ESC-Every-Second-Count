@@ -61,10 +61,10 @@ public class LevelCompleteScreen : MonoBehaviour
             exGunTimerScore.color = Color.red;
         }
 
-        if (time > (PortalController.countDown + 120))
+        if (((int)time) - PortalController.countDown - 240 < 0)
         {
             score += (((int)time) - PortalController.countDown - 120);
-            exTimeConsScore.text = $"{(((int)time) - PortalController.countDown - 120) * 10}";
+            exTimeConsScore.text = $"{(((int)time) - PortalController.countDown - 120)}";
         }
         else
         {
