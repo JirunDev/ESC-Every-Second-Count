@@ -51,7 +51,7 @@ public class ExplosionBullet : MonoBehaviour
         for (int i = 0; i < players.Length; i++) // if there is multiplayer
         {
             // Player take damage ******** (include later)
-            player.GetComponent<Damage>().TakeDamage(15);
+            player.GetComponent<Damage>().TakeDamage(10);
         }
 
         Invoke(nameof(Delay), 0.01f);
