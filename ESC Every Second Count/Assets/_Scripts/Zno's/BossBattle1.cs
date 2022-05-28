@@ -31,7 +31,11 @@ public class BossBattle1 : MonoBehaviour
 
     [SerializeField] private Toggle killBossToggle;
     public int maxEnemy = 15;
-    
+
+    [Header("Soundtrack")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip soundtrack;
+
     private void Awake()
     {
         stage = Stage.WaitToStart;
@@ -49,6 +53,11 @@ public class BossBattle1 : MonoBehaviour
     {
         StartBattle();
         colliderTrigger.OnPlayerEnterTrigger -= ColliderTrigger_OnPlayerEnterTrigger;
+
+        //boss music
+        audioSource.loop = true;
+        audioSource.clip = soundtrack;
+        audioSource.Play();
     }
     private void StartBattle()
     {
@@ -85,6 +94,10 @@ public class BossBattle1 : MonoBehaviour
 
             //Toggle
             killBossToggle.isOn = true;
+
+            //boss music
+            audioSource.Stop();
+            audioSource.loop = false;
         }
     }
 

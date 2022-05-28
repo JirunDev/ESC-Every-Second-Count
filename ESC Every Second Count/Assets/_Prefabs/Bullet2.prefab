@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d695529081158d44f84e349bd501fde6, type: 2}
+  - {fileID: 2100000, guid: ed83dc03c58a4214e918ec297625bd32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -136,3 +136,5 @@ MonoBehaviour:
   maxCollisions: 2
   maxLifeTime: 5
   explodeOnTouch: 1
+  audioSource: {fileID: 0}
+  expSFX: {fileID: 8300000, guid: 4d6d816408e48e7428e863203522508f, type: 3}

@@ -36,6 +36,10 @@ public class Enemy : MonoBehaviour
     public float sightRange, attackRange;
     private bool playerInSightRange, playerInAttackRange;
 
+    [Header("SFX")]
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
     private void Awake()
     {
         healthSystem = new BossHealthSystem(health);
@@ -112,6 +116,9 @@ public class Enemy : MonoBehaviour
             Rigidbody rb = Instantiate(projectile, shotPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * horizontalSpeed, ForceMode.Impulse);
             rb.AddForce(transform.up * verticalSpeed, ForceMode.Impulse);
+
+            //sfx
+            audioSource.PlayOneShot(audioClip);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);

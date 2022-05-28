@@ -21,6 +21,9 @@ public class LevelCompleteScreen : MonoBehaviour
     public Rigidbody player;
     public GameObject loadingScreen;
     public Slider loadingBar;
+    [Header("Music")]
+    public AudioSource audioSource;
+    public AudioClip audioClip;
 
     private int score;
     private float time;
@@ -28,6 +31,11 @@ public class LevelCompleteScreen : MonoBehaviour
     public void LevelComplete()
     {
         levelCompleteScreen.SetActive(true);
+
+        //music
+        audioSource.loop = true;
+        audioSource.clip = audioClip;
+        audioSource.Play();
 
         //total time
         time = Time.timeSinceLevelLoad;
@@ -37,7 +45,7 @@ public class LevelCompleteScreen : MonoBehaviour
         totalScore.text = CalculateScore().ToString();
         
         //stop everything at the end
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         player.velocity = Vector3.zero;
@@ -61,10 +69,10 @@ public class LevelCompleteScreen : MonoBehaviour
             exGunTimerScore.color = Color.red;
         }
 
-        if (((int)time) - PortalController.countDown - 240 < 0)
+        if ((((int)time) - PortalController.countDown - 240) > 0)
         {
-            score += (((int)time) - PortalController.countDown - 120);
-            exTimeConsScore.text = $"{(((int)time) - PortalController.countDown - 120)}";
+            score -= (((int)time) - PortalController.countDown - 240);
+            exTimeConsScore.text = $"-{(((int)time) - PortalController.countDown - 240)}";
         }
         else
         {
@@ -75,13 +83,13 @@ public class LevelCompleteScreen : MonoBehaviour
         return score;
     }
 
-    public void ContinueNextLevel()
+    public void ContinueNextLevel(int levelIndex)
     {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         GunItems.triggerNumber = 0;
 
         //LoadingScreen
-        StartCoroutine(LoadSceneAsynchronously(2));
+        StartCoroutine(LoadSceneAsynchronously(levelIndex));
     }
 
     IEnumerator LoadSceneAsynchronously(int levelIndex)

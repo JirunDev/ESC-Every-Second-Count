@@ -54,6 +54,7 @@ public class Bullet : MonoBehaviour
         {
             // Player take damage
             player.GetComponent<Damage>().TakeDamage(3);
+            player.GetComponent<Sound>().PlayDamageSound();
         }
 
         Invoke(nameof(Delay), 0.01f);

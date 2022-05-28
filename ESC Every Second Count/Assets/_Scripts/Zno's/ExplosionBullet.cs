@@ -20,6 +20,9 @@ public class ExplosionBullet : MonoBehaviour
     [SerializeField] private int maxCollisions;
     [SerializeField] private float maxLifeTime;
     [SerializeField] private bool explodeOnTouch = true;
+    
+    //sfx
+    [SerializeField] private AudioClip expSFX;
 
     int collisions;
     PhysicMaterial physics_mat;
@@ -52,6 +55,8 @@ public class ExplosionBullet : MonoBehaviour
         {
             // Player take damage ******** (include later)
             player.GetComponent<Damage>().TakeDamage(10);
+            player.GetComponent<Sound>().PlayDamageSound();
+            player.GetComponent<Sound>().PlaySFXSound(expSFX);
         }
 
         Invoke(nameof(Delay), 0.01f);
