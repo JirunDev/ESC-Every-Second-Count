@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6107752156063323058}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4284539994865432080}
   - component: {fileID: 993305817988288075}
   - component: {fileID: 7247708701095471837}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 8406025886753563244}
   - component: {fileID: 5823915473061845883}
   - component: {fileID: 1764754637592741855}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 6429815043179586070}
   - component: {fileID: 275537706044810512}
   - component: {fileID: 8136728223736415532}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 3992356265195357627}
   - component: {fileID: 4229980661425988026}
   - component: {fileID: 102126232062702927}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 7647476508705943056}
   - component: {fileID: 5226023382128892833}
   - component: {fileID: 3402006257021734450}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   - component: {fileID: 4511940398358192144}
   - component: {fileID: 995086536418636415}
   - component: {fileID: 1711510406149909549}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 6251409279139560239}
   - component: {fileID: 2182943478415104380}
   - component: {fileID: 9084014518400537405}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 7389146954723994863}
   - component: {fileID: 5236469954376388209}
   - component: {fileID: 5268478797796717717}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 1212552805239181190}
   - component: {fileID: 4523154203179797923}
   - component: {fileID: 8563535215130405835}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 4183713674518452149}
   - component: {fileID: 8824469420499923238}
   - component: {fileID: 5923190197034300310}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 5627133990639089472}
   - component: {fileID: 3220410932270980317}
   - component: {fileID: 4785903293194528010}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +932,7 @@ GameObject:
   - component: {fileID: 1269085835512312305}
   - component: {fileID: 523080847627123295}
   - component: {fileID: 2009158975420248709}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 221489107584445112}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: M1911Tactical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 7109098736542294888}
   - component: {fileID: 1852611280397133406}
   - component: {fileID: 8989307061438431414}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1140,7 +1140,7 @@ GameObject:
   - component: {fileID: 4146007897755250775}
   - component: {fileID: 913329410263541588}
   - component: {fileID: -224909890139293940}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: M1911Tactical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1199,7 +1199,7 @@ GameObject:
   - component: {fileID: 3470177013339094270}
   - component: {fileID: 6555188304154279613}
   - component: {fileID: 6118453904028184967}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 5457460514195346039}
   - component: {fileID: 5157709591640203234}
   - component: {fileID: 3286663661330528961}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1361,7 +1361,7 @@ GameObject:
   - component: {fileID: 3079637520927045847}
   - component: {fileID: 9185541433723896451}
   - component: {fileID: 1212004675518427545}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}

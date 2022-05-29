@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6361063414500457761}
   - component: {fileID: 7253314475610631020}
   - component: {fileID: 1915359751515487885}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: G36Mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9049258638735413881}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: G36C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 6736412106211096880}
   - component: {fileID: 3045710540076086077}
   - component: {fileID: 7378929979874976979}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: G36C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307605122483482252}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 4729715942204635008}
   - component: {fileID: 8458791583145414736}
   - component: {fileID: 979144665946214183}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: G36CBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
