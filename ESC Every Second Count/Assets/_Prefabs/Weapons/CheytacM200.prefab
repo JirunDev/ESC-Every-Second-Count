@@ -324,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4447992585425777011}
   - component: {fileID: 7188458840958592885}
+  - component: {fileID: 6663651985573661718}
   m_Layer: 7
   m_Name: CheytacM200
   m_TagString: Untagged
@@ -360,6 +361,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.63, z: 2.47}
   m_Center: {x: 0, y: 0.23, z: 0.3}
+--- !u!114 &6663651985573661718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5693037845857022079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1afafcc6ea4a40830ee03c0900168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5791515796672770562
 GameObject:
   m_ObjectHideFlags: 0
