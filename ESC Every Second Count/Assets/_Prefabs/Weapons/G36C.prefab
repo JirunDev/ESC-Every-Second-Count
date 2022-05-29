@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6736412106211096880}
   - component: {fileID: 3045710540076086077}
-  - component: {fileID: 7378929979874976979}
+  - component: {fileID: -1281519787779943520}
   m_Layer: 0
   m_Name: G36C
   m_TagString: Untagged
@@ -160,7 +160,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.88, z: 2.33}
   m_Center: {x: 0, y: 0.08, z: 0.01}
---- !u!114 &7378929979874976979
+--- !u!114 &-1281519787779943520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1139,7 +1139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4146007897755250775}
   - component: {fileID: 913329410263541588}
-  - component: {fileID: -224909890139293940}
+  - component: {fileID: -5620715524748091477}
   m_Layer: 0
   m_Name: M1911Tactical
   m_TagString: Untagged
@@ -1176,7 +1176,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.56, z: 0.88}
   m_Center: {x: -0, y: 0, z: 0}
---- !u!114 &-224909890139293940
+--- !u!114 &-5620715524748091477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

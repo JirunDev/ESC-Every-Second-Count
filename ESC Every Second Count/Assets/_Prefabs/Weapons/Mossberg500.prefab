@@ -1591,7 +1591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4913104809278293190}
   - component: {fileID: 5497445974454414252}
-  - component: {fileID: 8659192121419255694}
+  - component: {fileID: -3065654581059599447}
   m_Layer: 0
   m_Name: Mossberg500
   m_TagString: Untagged
@@ -1628,7 +1628,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.17, y: 0.55, z: 2.1}
   m_Center: {x: 0, y: 0.06, z: 0.1}
---- !u!114 &8659192121419255694
+--- !u!114 &-3065654581059599447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

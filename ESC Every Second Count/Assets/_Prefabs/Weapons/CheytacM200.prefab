@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4447992585425777011}
   - component: {fileID: 7188458840958592885}
-  - component: {fileID: 6663651985573661718}
+  - component: {fileID: 3997977997979980482}
   m_Layer: 0
   m_Name: CheytacM200
   m_TagString: Untagged
@@ -361,7 +361,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.63, z: 2.47}
   m_Center: {x: 0, y: 0.23, z: 0.3}
---- !u!114 &6663651985573661718
+--- !u!114 &3997977997979980482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6263539203137020524}
   - component: {fileID: 7487933382161725445}
-  - component: {fileID: 2650020366332313868}
+  - component: {fileID: -2436597929961321329}
   m_Layer: 0
   m_Name: MP5
   m_TagString: Untagged
@@ -128,7 +128,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.66, z: 1.4}
   m_Center: {x: 0, y: 0.06, z: 0.28}
---- !u!114 &2650020366332313868
+--- !u!114 &-2436597929961321329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
