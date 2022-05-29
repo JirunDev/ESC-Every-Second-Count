@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6361063414500457761}
   - component: {fileID: 7253314475610631020}
   - component: {fileID: 1915359751515487885}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: G36Mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9049258638735413881}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: G36C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6736412106211096880}
   - component: {fileID: 3045710540076086077}
-  m_Layer: 7
+  - component: {fileID: -1281519787779943520}
+  m_Layer: 0
   m_Name: G36C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,6 +160,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.13, y: 0.88, z: 2.33}
   m_Center: {x: 0, y: 0.08, z: 0.01}
+--- !u!114 &-1281519787779943520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5534849237766447589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a1afafcc6ea4a40830ee03c0900168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6086792899643822498
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307605122483482252}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +213,7 @@ GameObject:
   - component: {fileID: 4729715942204635008}
   - component: {fileID: 8458791583145414736}
   - component: {fileID: 979144665946214183}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: G36CBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}

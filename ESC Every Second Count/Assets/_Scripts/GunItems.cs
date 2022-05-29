@@ -12,15 +12,15 @@ public class GunItems : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (transform.name == "M1911Tactical")
+            if (transform.name == "M1911Tactical(Clone)")
                 triggerNumber = 1;
-            if (transform.name == "G36C")
+            if (transform.name == "G36C(Clone)")
                 triggerNumber = 2;
-            if (transform.name == "Mossberg500")
+            if (transform.name == "Mossberg500(Clone)")
                 triggerNumber = 3;
-            if (transform.name == "MP5")
+            if (transform.name == "MP5(Clone)")
                 triggerNumber = 4;
-            if (transform.name == "CheytacM200")
+            if (transform.name == "CheytacM200(Clone)")
                 triggerNumber = 5;
             if (transform.name == "Reset")
                 triggerNumber = 0;
