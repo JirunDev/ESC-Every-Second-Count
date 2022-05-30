@@ -7,7 +7,6 @@ public class FakeMainMenu : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip genshinSound;  
     public AudioClip actualSound;
-    
     void Start()
     {
         audioSource.loop = true;

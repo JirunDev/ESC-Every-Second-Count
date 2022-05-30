@@ -25,6 +25,8 @@ public class LevelCompleteScreen : MonoBehaviour
     [Header("Music")]
     public AudioSource audioSource;
     public AudioClip audioClip;
+    [Header("SaveSystem")]
+    public string level;
 
     private int score;
     private float time;
@@ -44,6 +46,11 @@ public class LevelCompleteScreen : MonoBehaviour
 
         //score calculations
         totalScore.text = CalculateScore().ToString();
+
+        //save
+        if (level == "city") PlayerPrefs.SetInt("pbcity", CalculateScore());
+        if (level == "village") PlayerPrefs.SetInt("pbvillage", CalculateScore());
+        if (level == "space") PlayerPrefs.SetInt("pbspace", CalculateScore());
         
         //stop everything at the end
         //Time.timeScale = 0f;
