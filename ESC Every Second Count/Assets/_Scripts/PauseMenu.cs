@@ -62,12 +62,15 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         GunItems.triggerNumber = 0;
 
+        PlayerPrefs.SetInt("introcheck", 1);
+
         //LoadingScreen
         StartCoroutine(LoadSceneAsynchronously(0));
     }
 
     public void QuitToDesktop()
     {
+        PlayerPrefs.SetInt("introcheck", 0);
         Application.Quit();
     }
 

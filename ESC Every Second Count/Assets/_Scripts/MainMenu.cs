@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        PlayerPrefs.SetInt("introcheck", 0);
         Application.Quit();
     }
 
