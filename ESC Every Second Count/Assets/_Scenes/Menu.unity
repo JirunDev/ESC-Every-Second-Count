@@ -327,7 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1017494558}
   genshinSound: {fileID: 8300000, guid: f7aa0290fa86d1f41a09f1a4d32b011c, type: 3}
-  actualSound: {fileID: 8300000, guid: 1266ad1e165e2c54491a6ee637bf9180, type: 3}
+  actualSound: {fileID: 8300000, guid: 0b6a60d03e38b65429dc1c81c0e11750, type: 3}
 --- !u!1 &72646743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,7 +1465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1017494558}
   genshinSound: {fileID: 8300000, guid: f7aa0290fa86d1f41a09f1a4d32b011c, type: 3}
-  actualSound: {fileID: 8300000, guid: 1266ad1e165e2c54491a6ee637bf9180, type: 3}
+  actualSound: {fileID: 8300000, guid: 0b6a60d03e38b65429dc1c81c0e11750, type: 3}
 --- !u!1 &771147559
 GameObject:
   m_ObjectHideFlags: 0
