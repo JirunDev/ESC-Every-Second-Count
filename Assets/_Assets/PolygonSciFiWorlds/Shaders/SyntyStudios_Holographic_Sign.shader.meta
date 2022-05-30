@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c5e9d000e3320424581e17f90f050a96
+timeCreated: 1634603378
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _HoloLines: {fileID: 2800000, guid: 54b3339ded3457f42945715232faa0bc, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
