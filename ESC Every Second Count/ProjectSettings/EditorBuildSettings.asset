@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/_Scenes/Menu.unity
     guid: f79ddca7cdc5b9241bf74d62fbc13e80
   - enabled: 1
-    path: Assets/_Scenes/Boss Fight.unity
-    guid: afa181dabbbbfd24a93e936eb23ddbf8
+    path: Assets/_Scenes/2. City/stage3.unity
+    guid: 3f7e58f389e11da4d98cb3d7157eb66f
   - enabled: 1
     path: Assets/_Scenes/1.Village/1.Village.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
