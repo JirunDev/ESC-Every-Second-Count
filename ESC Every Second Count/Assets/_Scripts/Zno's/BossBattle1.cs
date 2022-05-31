@@ -15,7 +15,7 @@ public class BossBattle1 : MonoBehaviour
 
     private Stage stage;
 
-    [SerializeField] private Boss1Logic boss1;
+    private Boss1Logic boss1;
     [SerializeField] private ColliderTrigger colliderTrigger;
 
     [Header("SpawningEnemies")]
@@ -39,6 +39,8 @@ public class BossBattle1 : MonoBehaviour
     private void Awake()
     {
         stage = Stage.WaitToStart;
+
+        boss1 = GameObject.Find("GameNyanBoss").GetComponent<Boss1Logic>();
 
         boss1.GetHealthSystem().OnDamaged += BossBattle_OnDamaged;
         colliderTrigger.OnPlayerEnterTrigger += ColliderTrigger_OnPlayerEnterTrigger;
