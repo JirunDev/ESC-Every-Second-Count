@@ -55,7 +55,7 @@ https://creativecommons.org/licenses/by/4.0/
 
 https://www.cgtrader.com/pages/terms-and-conditions#royalty-free-license
 
-All models and textures other than stated ones and purchased assets are public domain and were created for this package only.
+All models and textures other than stated ones and purchased assets were created for this package only.
 
 ## **Team Members:**
 1. JirunDev (Director, Programmer, Artist, Map Designer)
