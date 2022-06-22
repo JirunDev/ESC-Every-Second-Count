@@ -1,7 +1,7 @@
 # ESC: Every Second Count
 ![](https://img.itch.zone/aW1nLzkwNzc0MTEucG5n/original/2TQzxi.png)
 
-Developer: KongJones Studio (GRDC Team C - Final Project)
+Developer: KongJones Studio (GRDC Team C - Final Project 2021)
 
 Play as an escaping government experiment,  explore a variety of maps, and fight your way out of waves of pursuers and an unexpected boss to chase after that sweet freedom... But don't forget that your time is also running out!
 
