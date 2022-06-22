@@ -60,7 +60,7 @@ https://www.cgtrader.com/pages/terms-and-conditions#royalty-free-license
 All models and textures other than stated ones and purchased assets were created for this package only.
 
 ## **Team Members:**
-1. JirunDev (Director, Programmer, Artist, Map Designer)
+1. JirunDev (Director, Programmer, Composer, Artist)
 2. Nightrukami (Programmer)
 3. jeklao69420 (Programmer)
 4. kpisnotabsentmindedbutisburnout (Music Composer, Writer, Map Designer)
