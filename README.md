@@ -24,8 +24,11 @@ https://github.com/Leprawel/Parkour-controller-script
 **Sounds:**
 - Ambiances are from freesound.org, one under CC0 and one under CC BY-NC 4.0 with no change made to the track.
 - Sound effects (other than from purchased assets) are majorly from soundfxcenter.com, in which some were borrowed from Call of Duty: Modern Warfare 2/Among Us/Counter Strike Source/Halo 4/Minecraft, and some are under CC0 license. All of which were assigned as placeholders during development.
+
 https://creativecommons.org/publicdomain/zero/1.0/
+
 https://creativecommons.org/licenses/by-nc/4.0/
+
 (morning in town.WAV by inchadney: https://freesound.org/people/inchadney/sounds/515617/)
 
 **Fonts:**
@@ -45,8 +48,11 @@ https://delthor-games.itch.io/free-low-poly-weapons-pack-3
 https://sketchfab.com/3d-models/mossberg-500-pump-shotgun-9899f3a9f5c948a9b1e89470f0dfc132
 - Cheytac M200 Intervention from SomberTurtle under cgtrader's Royalty Free License with no modification to the model.
 https://www.cgtrader.com/free-3d-models/military/gun/cheytac-m200-intervention-3d327b04-b887-4178-be56-edf92d6fe7e0
+
 https://creativecommons.org/licenses/by-nc-nd/4.0/
+
 https://creativecommons.org/licenses/by/4.0/
+
 https://www.cgtrader.com/pages/terms-and-conditions#royalty-free-license
 
 All models and textures other than stated ones and purchased assets are public domain and were created for this package only.
