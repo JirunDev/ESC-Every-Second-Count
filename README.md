@@ -15,7 +15,7 @@ Every Second Count is a fighter arena FPS game featuring 3D combat with various 
 
 ## **License Info:**
 
-This project was created only for study and research use. You cannot sell this project, nor ones with any components from this project.
+This project was created only for study and research use. You cannot sell this project nor any components from this project.
 
 **Scripts:**
 - The movement controller is mainly based on Leprawel's Pakour Controller Script with modifications:
@@ -58,7 +58,7 @@ https://www.cgtrader.com/pages/terms-and-conditions#royalty-free-license
 All models and textures other than stated ones and purchased assets are public domain and were created for this package only.
 
 ## **Team Members:**
-1. JirunDev (Director, Programmer, Artist)
+1. JirunDev (Director, Programmer, Artist, Map Designer)
 2. Nightrukami (Programmer)
 3. jeklao69420 (Programmer)
 4. kpisnotabsentmindedbutisburnout (Music Composer, Writer, Map Designer)
