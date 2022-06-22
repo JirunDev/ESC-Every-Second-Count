@@ -1,4 +1,4 @@
-# ESC: Every Second Count
+# ESC: Every Second Counts
 ![](https://img.itch.zone/aW1nLzkwNzc0MTEucG5n/original/2TQzxi.png)
 
 Developer: KongJones Studio (GRDC Team C - Final Project 2021)
