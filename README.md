@@ -1,7 +1,7 @@
 # ESC: Every Second Count
 ![](https://img.itch.zone/aW1nLzkwNzc0MTEucG5n/original/2TQzxi.png)
 
-Developer: KongJones Studio
+Developer: KongJones Studio (GRDC Team C - Final Project)
 
 Play as an escaping government experiment,  explore a variety of maps, and fight your way out of waves of pursuers and an unexpected boss to chase after that sweet freedom... But don't forget that your time is also running out!
 
@@ -50,3 +50,13 @@ https://creativecommons.org/licenses/by/4.0/
 https://www.cgtrader.com/pages/terms-and-conditions#royalty-free-license
 
 All models and textures other than stated ones and purchased assets are public domain and were created for this package only.
+
+## **Team Members:**
+1. JirunDev (Director, Programmer, Artist)
+2. Nightrukami (Programmer)
+3. jeklao69420 (Programmer)
+4. kpisnotabsentmindedbutisburnout (Music Composer, Writer, Map Designer)
+5. punnk2309 (Map Designer)
+6. ZnoKunG (Map Designer)
+7. T0F-U (Artist)
+8. vichcha (Writer, Animator)
