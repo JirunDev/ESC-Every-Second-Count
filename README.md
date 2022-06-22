@@ -6,6 +6,7 @@ Play as an escaping government experiment,  explore a variety of maps, and fight
 Every Second Count is a fighter arena FPS game featuring 3D combat with various weapons integrated with the high-freedom movement against brutal minions and the boss.
 
 _Developer: KongJones Studio (Team C - 2021 GRDC Final Project)_
+
 _itch.io Page: https://chulagrdc.itch.io/esc-every-second-counts_
 
 **Screenshots:**
