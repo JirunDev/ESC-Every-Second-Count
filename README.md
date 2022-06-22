@@ -1,11 +1,12 @@
 # ESC: Every Second Counts
 ![](https://img.itch.zone/aW1nLzkwNzc0MTEucG5n/original/2TQzxi.png)
 
-Developer: KongJones Studio (GRDC Team C - Final Project 2021)
-
 Play as an escaping government experiment,  explore a variety of maps, and fight your way out of waves of pursuers and an unexpected boss to chase after that sweet freedom... But don't forget that your time is also running out!
 
 Every Second Count is a fighter arena FPS game featuring 3D combat with various weapons integrated with the high-freedom movement against brutal minions and the boss.
+
+_Developer: KongJones Studio (Team C - 2021 GRDC Final Project)_
+_itch.io Page: https://chulagrdc.itch.io/esc-every-second-counts_
 
 **Screenshots:**
 ![](https://i.ibb.co/JQRfKM5/1.png)
