@@ -61,10 +61,10 @@ All models and textures other than stated ones and purchased assets were created
 
 ## **Team Members:**
 1. JirunDev (Director, Programmer, Composer, Artist)
-2. Nightrukami (Programmer)
+2. ZnoKunG (Programmer)
 3. jeklao69420 (Programmer)
 4. kpisnotabsentmindedbutisburnout (Music Composer, Writer, Map Designer)
 5. punnk2309 (Map Designer)
-6. ZnoKunG (Map Designer)
+6. Nightrukami (Map Designer)
 7. T0F-U (Artist)
 8. vichcha (Writer, Animator)
